@@ -1,0 +1,11 @@
+.item-quality-4 {
+    color: purple;
+}
+
+.item-quality-5, .item-quality-6 {
+    color: orange;
+}
+
+.item-container {
+    background: #DEDEDE;
+}
