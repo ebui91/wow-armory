@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+
+import ItemModal from '../ItemModal/ItemModal.js';
 import './ArmoryItem.css';
 
 class ArmoryItem extends Component {
@@ -7,21 +8,35 @@ class ArmoryItem extends Component {
         super();
 
         this.state = {
-            item: {}
+            modalShown: false
         }
+        this.displayItemModal = this.displayItemModal.bind(this);
+        this.removeItemModal = this.removeItemModal.bind(this);
     }
 
-    componentDidMount() {
-        this.setState({ item: this.props.item });
-        axios.get("/api/item")
+    displayItemModal() {
+        this.setState({ modalShown: true });
+    }
+
+    removeItemModal() {
+        this.setState({ modalShown: false });
     }
 
     render() {
-        const { name, icon, quality } = this.state.item;
+        const { name, icon, itemLevel, quality } = this.props.item;
+
         return (
-            <div className="item-container">
-                <h4 className={`item-quality-${quality}`}>{name}</h4>
-                <img src={`http://media.blizzard.com/wow/icons/56/${icon}.jpg`} alt={`${name}-icon`} />
+            <div className="item-container" onMouseEnter={() => this.displayItemModal()} onMouseLeave={() => this.removeItemModal()}>
+                <img className={`item-border-${quality}`} src={`https://wow.zamimg.com/images/wow/icons/large/${icon}.jpg`} alt={`${name}-icon`} />
+                
+                <div className="item-text item-text--right">
+                    <h4 className={`item-quality-${quality}`}>{name}</h4>
+                    <p className={`item-quality-${quality}`}>({itemLevel})</p>
+                </div>
+
+                {
+                    this.state.modalShown ? <ItemModal item={this.props.item} /> : null
+                }
             </div>
         )
     }

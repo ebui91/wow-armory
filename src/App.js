@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import './reset.css';
 import raceList from './races.json';
 import classList from './classes.json';
 
@@ -33,12 +34,12 @@ class App extends Component {
           <p>{ name }</p>
           <p>{ realm } ({ battlegroup })</p>
           <p>Level {level} { characterRace && characterRace.name } { characterClass && characterClass.name }</p>
-          <img src={ `https://render-us.worldofwarcraft.com/character/${ thumbnail }` } />
+          <img src={ `https://render-us.worldofwarcraft.com/character/${ thumbnail }` } alt=""/>
           <p>Honorable Kills: { totalHonorableKills }</p>
         </div>
 
         <CharacterStats stats={this.state.character.stats} />
-        <Armory />
+        <Armory imgURL={`https://render-us.worldofwarcraft.com/character/${thumbnail}`} />
       </div>
     );
   }

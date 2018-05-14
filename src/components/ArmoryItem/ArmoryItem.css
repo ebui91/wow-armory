@@ -2,10 +2,50 @@
     color: purple;
 }
 
-.item-quality-5, .item-quality-6 {
+.item-border-4 {
+    border: 1px solid purple;
+}
+
+.item-quality-5 {
     color: orange;
 }
 
+.item-border-5 {
+    border: 1px solid orange;
+}
+
+.item-quality-6 {
+    color: #f5efd0;
+}
+
+.item-border-6 {
+    border: 1px solid #f5efd0;
+}
+
 .item-container {
-    background: #DEDEDE;
+    height: auto;
+    width: auto;
+    padding: 5px;
+    margin: 10px;
+}
+
+.item-container h4 {
+    float: right;
+    margin-left: 5px;
+}
+
+.item-container p {
+    margin-left: 5px;
+}
+
+.item-container img {
+    float: left;
+}
+
+.item-text {
+    display: inline-block;
+}
+
+.item-stat-text {
+    color: #1eff00;
 }

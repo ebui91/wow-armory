@@ -20,14 +20,20 @@ console.log('ENV: ', process.env.PORT);
 
 app.get("/api/test", (req, res, next) => {
     axios
-      .get("https://us.api.battle.net/wow/character/MalGanis/Illania?fields=stats&locale=en_US&apikey=57q7cmw3nv6j8exczpefs9pzm4fybw4w")
+      .get("https://us.api.battle.net/wow/character/Mal'Ganis/Illania?fields=stats&locale=en_US&apikey=57q7cmw3nv6j8exczpefs9pzm4fybw4w")
       .then(response => res.status(200).json(response.data));
 });
 
 app.get("/api/armory", (req, res, next) => {
     axios
-      .get("https://us.api.battle.net/wow/character/MalGanis/Illania?fields=items&locale=en_US&apikey=57q7cmw3nv6j8exczpefs9pzm4fybw4w")
+      .get("https://us.api.battle.net/wow/character/Mal'Ganis/Illania?fields=items&locale=en_US&apikey=57q7cmw3nv6j8exczpefs9pzm4fybw4w")
       .then(response => res.status(200).json(response.data.items));
+});
+
+app.get("/api/item/:id", (req, res, next) => {
+    axios
+      .get(`https://us.api.battle.net/wow/item/${req.params.id}?locale=en_US&apikey=57q7cmw3nv6j8exczpefs9pzm4fybw4w`)
+      .then(response => res.status(200).json(response.data));
 });
 
 // Server Listening

@@ -1,0 +1,20 @@
+.item-modal-container {
+    position: absolute;
+    background: rgba(36, 36, 36, 0.8);
+    padding: 15px;
+    margin: 5px;
+    border-radius: 3px;
+    border: 1px solid #c0c0c0;
+    height: auto;
+    max-width: 500px;
+    font-family: Verdana, "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.item-level-text {
+    color: #ffd000
+}
+
+.item-normal-text {
+    color: #c0c0c0;
+}

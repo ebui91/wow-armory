@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import ArmoryItem from '../ArmoryItem/ArmoryItem.js';
+import statsList from '../../stats.json';
+
+import './Armory.css';
 
 class Armory extends Component {
     constructor() {
         super();
 
         this.state = {
-            itemList: []
+            itemList: [],
+            statsList: {}
         }
     }
 
@@ -20,19 +24,19 @@ class Armory extends Component {
                 }
             }
         });
+        this.setState({ statsList: statsList });
     }
 
     render() {
-        const items = this.state.itemList.slice(2, 18).map((curr, i) => {
+        const items = this.state.itemList.slice(2, 19).map((curr, i) => {
             return(
-                <ArmoryItem item={ curr } />
+                <ArmoryItem key={i} item={ curr } stats={ this.state.statsList } />
             )
-        });
+        }); 
         return(
-            <React.Fragment>
-                <h1>ARMORY</h1>
+            <section className="armory-container" style={{ backgroundImage: `url(${this.props.imgURL && this.props.imgURL.replace(/avatar.jpg/i, 'main.jpg')})`, backgroundRepeat: "no-repeat", backgroundPosition: "center" }}>
                 { items }
-            </React.Fragment>
+            </section>
         )
     }
 }

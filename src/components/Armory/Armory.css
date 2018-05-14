@@ -1,0 +1,11 @@
+.armory-container {
+    max-height: 100vh;
+    max-width: 100%;
+    padding: 10px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: space-between;
+}

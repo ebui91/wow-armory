@@ -1,0 +1,35 @@
+.stats-container {
+    border: 1px solid #222;
+    padding: 10px;
+}
+
+.armory-bar {
+    height: 35px;
+    width: 250px;
+    color: #FFF;
+}
+
+.armory-healthbar {
+    background: green;
+}
+
+.armory-furybar {
+    background: purple;
+    height: 35px;
+    width: 250px;
+    color: #FFF;
+}
+
+.armory-ragebar {
+    background: red;
+    height: 35px;
+    width: 250px;
+    color: #FFF;    
+}
+
+.armory-manabar {
+    background: blue;
+    height: 35px;
+    width: 250px;
+    color: #FFF;      
+}

@@ -1,1 +1,5 @@
-
+.App {
+    background: #111;
+    color: #FFF;
+    font-family: Verdana, "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
